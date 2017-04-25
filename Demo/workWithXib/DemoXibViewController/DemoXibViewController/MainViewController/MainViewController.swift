@@ -111,10 +111,10 @@ extension MainViewController {
         // adding to superView
         superView.addSubview(tableView)
         // adding autolayout
-        addConstraints(for: tableView, to: superView)
+        addTableViewConstraints(from: tableView, to: superView)
         return tableView
     }
-    private func addConstraints(for subview: UITableView, to superView: UIView) {
+    private func addTableViewConstraints(from subview: UIView, to superView: UIView) {
         let top = NSLayoutConstraint(item: subview, attribute: .top, relatedBy: .equal, toItem: superView, attribute: .top, multiplier: 1.0, constant: 0)
         let bottom = NSLayoutConstraint(item: subview, attribute: .bottom, relatedBy: .equal, toItem: superView, attribute: .bottom, multiplier: 1.0, constant: 0)
         let leading = NSLayoutConstraint(item: subview, attribute: .leading, relatedBy: .equal, toItem: superView, attribute: .leading, multiplier: 1.0, constant: 0)
