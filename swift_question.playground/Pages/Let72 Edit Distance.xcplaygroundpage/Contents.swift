@@ -26,8 +26,9 @@ class Solution {
                 // add
                 if i == 0 {
                     dp[i][j] = j
-                    // add
+                    
                 } else if j == 0 {
+                // add
                     dp[i][j] = i
                 } else {
                     // repalce

@@ -70,5 +70,6 @@
         <page name='Let253'/>
         <page name='Shuffle Array'/>
         <page name='More Zero'/>
+        <page name='App'/>
     </pages>
 </playground>

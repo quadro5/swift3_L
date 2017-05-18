@@ -11,7 +11,7 @@ var str = "Hello, playground"
 
 func random(in range: Range<Int>) -> Int {
     let count = UInt32(range.upperBound - range.lowerBound)
-    return Int(arc4random_uniform(count)) + range.upperBound
+    return Int(arc4random_uniform(count)) + range.lowerBound
     
 }
 

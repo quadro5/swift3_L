@@ -49,3 +49,15 @@ let rect = CGRect(x: 100, y: 100, width: 400, height: 300)
 var image2 = image?.cropImage(with: rect)
 
 
+
+let letterLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+letterLabel.font = UIFont.boldSystemFont(ofSize: 48)
+letterLabel.textAlignment = .center
+letterLabel.backgroundColor = UIColor.red
+letterLabel.textColor = UIColor.white
+letterLabel.layer.masksToBounds = true
+letterLabel.layer.cornerRadius = 180.0 / 2.0
+
+letterLabel.text = "1"
+
+

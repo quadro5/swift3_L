@@ -60,6 +60,27 @@ func uniqueArray2(strs: [String]) -> [String] {
     return res
 }
 
+extension Array where Element: Hashable {
+    func unique() -> [Element] {
+        if self.isEmpty {
+            return [Element]()
+        }
+        
+        var set = Set<Element>()
+        let results = self.filter { (element) -> Bool in
+            if set.contains(element) == false {
+                set.insert(element)
+                return true
+            }
+            return false
+        }
+        
+        return results
+    }
+}
+
+let array = [1,2,3,4,3,5,1,2]
+let unique = array.unique()
 
 
 

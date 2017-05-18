@@ -87,3 +87,21 @@ if let validTitle = currentTitle {
 } else {
     print("I am nil")
 }
+ 
+ 
+ 
+ 
+ 
+ 
+ class TestLazyLoadOptional {
+    lazy var lazyInt: Int? = { () -> Int? in
+        return 10
+    }()
+    lazy var hehe: String? = nil
+ }
+ 
+ let testLazyLoadOptional = TestLazyLoadOptional()
+ print(testLazyLoadOptional.lazyInt ?? 0)
+ testLazyLoadOptional.lazyInt = 100
+ 
+ 

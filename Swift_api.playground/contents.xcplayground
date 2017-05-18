@@ -3,8 +3,8 @@
     <pages>
         <page name='JSON Parser'/>
         <page name='FIleManager'/>
-        <page name='URL URLRequest'/>
-        <page name='URLSession'/>
+        <page name='URLRequest URLSession'/>
+        <page name='URL'/>
         <page name='Protocol'/>
         <page name='Singleton'/>
         <page name='Primitive Types'/>
@@ -25,5 +25,15 @@
         <page name='Run time'/>
         <page name='Tuple'/>
         <page name='Model Design'/>
+        <page name='NSCopying Copyable Protocol'/>
+        <page name='Lazy Load'/>
+        <page name='AnyClass,  Type, .self'/>
+        <page name='Pass Reference Value'/>
+        <page name='UIColor'/>
+        <page name='Networking POP'/>
+        <page name='Networking POP2'/>
+        <page name='Networking Generics'/>
+        <page name='RLE'/>
+        <page name='nestedStruct'/>
     </pages>
 </playground>

@@ -1,5 +1,7 @@
 
 
+
+
 // DoubleListNode
 class DoubleListNode<T> {
     typealias Element = T
@@ -22,16 +24,6 @@ class DoubleListNode<T> {
         self.next = nil
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 // ListNode
 class ListNode<T> {

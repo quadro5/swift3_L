@@ -16,7 +16,7 @@ class MyClass1 {
     func test(completion: @escaping ((String)->())) {
         //self.myBlock = completion
         DispatchQueue.global().async {
-            completion("in compleation")
+            completion("in completion")
         }
     }
     deinit {
@@ -29,7 +29,7 @@ func myTest() {
     obj.str = "yyy"
     obj.test { (res) in
         print(res)
-        print(obj.str ?? "obj.str")
+        //print(obj.str ?? "obj.str")
     }
     return
 }
@@ -107,5 +107,57 @@ func test32() {
 }
 
 
+///// 
+print("\nTest for combine value type and reference type")
+class Person {
+    var name: String
+    var friends: [Person] = []
+    var friendsUnowned: [Unowned<Person>] = []
+    var friendsWeak = Array<Weak<Person>>()
+    init(_ name: String) {
+        self.name = name
+        print("New person instance: \(name)")
+    }
+    
+    deinit {
+        print("Person instance \(name) is being deallocated")
+    }
+}
 
+//do {
+//    let ernie = Person(name: "Ernie")
+//    let bert = Person(name: "Bert")
+//    
+//    ernie.friends.append(bert) // Not deallocated
+//    bert.friends.append(ernie) // Not deallocated
+//}
+
+class Unowned<T: AnyObject> {
+    unowned var value: T
+    init(_ value: T) {
+        self.value = value
+        print("create unowned \(value)")
+    }
+}
+
+class Weak<T: AnyObject> {
+    weak var value: T?
+    init(_ value: T) {
+        self.value = value
+        print("create weak \(value)")
+    }
+}
+
+
+
+do {
+    let ernie = Person("Ernie")
+    let bert = Person("Bert")
+    
+    ernie.friendsUnowned.append(Unowned(bert)) // Not deallocated
+    bert.friendsUnowned.append(Unowned(ernie)) // Not deallocated
+    
+    ernie.friendsWeak.append(Weak(bert))
+    bert.friendsWeak.append(Weak(ernie))
+}
 
